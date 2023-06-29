@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-acadbot-dev-185926-authRole",
+      "UnauthRoleArn": "arn:aws:iam::705407349213:role/amplify-acadbot-dev-185926-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::705407349213:role/amplify-acadbot-dev-185926-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-acadbot-dev-185926-deployment",
+      "UnauthRoleName": "amplify-acadbot-dev-185926-unauthRole",
+      "StackName": "amplify-acadbot-dev-185926",
+      "StackId": "arn:aws:cloudformation:us-east-1:705407349213:stack/amplify-acadbot-dev-185926/62f1edd0-dac8-11ed-a730-0ef69db519d5",
+      "AmplifyAppId": "d204hup0iazkbf"
+    }
+  }
+}

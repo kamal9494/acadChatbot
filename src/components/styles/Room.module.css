@@ -1,0 +1,77 @@
+.containerWrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    width: 70%;
+}
+
+.msgWrap{
+    width: 80%;
+    display: flex;
+    margin-top: 5px;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.msg{
+    padding: 8px;
+    background-color: rgb(220, 220, 220);
+    /* color: #fff; */
+    border-radius: 10px;
+    margin: 5px;
+}
+.userWrap{
+    width: 99%;
+    margin-top: 5px;
+    /* margin: 5px; */
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+.loaderdiv{
+    margin-left: 10px;
+}
+.errmsg{
+    padding: 8px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 10px;
+    margin: 5px;
+    color: red;
+}
+.head{
+    color:rgb(89, 88, 88) ;
+}
+.bannerContainer{
+    margin-top: 50px;
+    text-align: center;
+}
+.ques{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+}
+.bannerContainer p{
+    margin-top: 30px;
+    color: rgb(108, 108, 108);
+}
+
+@media (max-width: 400px){
+    .container{
+        width: 100%;
+    }
+}
+@media (min-width: 400px) and (max-width: 614px) {
+    .container{
+        width: 100%;
+    }
+}
+@media (min-width: 615px) and (max-width: 900px) {
+    .container{
+        width: 100%;
+    }
+}

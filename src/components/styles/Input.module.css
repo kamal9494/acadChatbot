@@ -1,0 +1,101 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.indiv{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.input{
+    /* background-color: red; */
+    width: 70%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    padding: 12px;
+    box-shadow: 0 0 10px rgb(73, 73, 73);
+    overflow: hidden;
+}
+
+.input:focus{
+    outline: none;
+    box-shadow: 0 0 10px rgb(73, 73, 73);
+}
+.send{
+    border: none;
+    background-color: darkslateblue;
+    height: 45px;
+    margin-left: 10px;
+    border-radius: 20%;
+    color: #fff;
+    width: 40px;
+    /* margin-right: 50px; */
+}
+
+
+@media (max-width: 400px){
+    .indiv{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input{
+        width: 80%;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        padding: 12px;
+        box-shadow: 0 0 10px rgb(73, 73, 73);
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 614px) {
+    .indiv{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input{
+        width: 80%;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        padding: 12px;
+        box-shadow: 0 0 10px rgb(73, 73, 73);
+        overflow: hidden;
+    }
+}
+@media (min-width: 615px) and (max-width: 900px) {
+    .indiv{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input{
+        width: 80%;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        font-size: 15px;
+        padding: 12px;
+        box-shadow: 0 0 10px rgb(73, 73, 73);
+        overflow: hidden;
+    }
+}
