@@ -177,9 +177,9 @@ const Error = (err) => {
 const Banner = () => {
   return (
     <div className={styles.bannerContainer} style={{ height: "60vh" }}>
-      <h3 className={styles.head}>Ask</h3>
-      <p>What are the prerequisites for Computer Graphics?</p>
-      <p>Can I take Cloud Computing?</p>
+      <h3 className={styles.head}>Examples</h3>
+      <p>"What are the prerequisites for Computer Graphics"</p>
+      <p>"Can I register Cloud Computing"</p>
     </div>
   );
 };

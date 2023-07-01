@@ -43,7 +43,8 @@
     color: red;
 }
 .head{
-    color:rgb(89, 88, 88) ;
+    color:rgb(89, 88, 88);
+    /* font-size: 17px; */
 }
 .bannerContainer{
     margin-top: 50px;
