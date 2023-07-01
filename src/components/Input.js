@@ -7,50 +7,54 @@ import styles from "./styles/Input.module.css";
 import { AiOutlineSend } from "react-icons/ai";
 
 const Input = (props) => {
-  const [message, setMessage] = useState([{ id: null, msg: "" }]);
+  const [message, setMessage] = useState({ msg: "" });
 
   const handleSubmit = () => {
-    if (message[0].msg === "") {
+    if (message.msg.length === 0) {
       toast.warning("Enter your Query");
     } else {
-      const inputobj = [...props.messages, ...message];
-      props.setMessages(inputobj);
+      const input = [...props.messages,message];
+      props.setMessages(input);
       props.setBStatus(true);
-      setMessage([{ id: null, msg: "" }]);
-      sendToBot(message[0].msg, inputobj);
+      setMessage({ msg: "" });
+      sendToBot(message.msg,input);
     }
   };
 
-  const sendToBot = async (userInput, inputobj) => {
+  const sendToBot = async (userInput,input) => {
     const botName = process.env.REACT_APP_BOT_NAME;
-    Interactions.send(botName,userInput).then((responce) => {
-      let res = [
-        {
+    Interactions.send(botName, userInput).then(
+      (responce) => {
+        let res = {
           id: v4(),
           msg: responce.message,
           from: "_bot",
-        },
-      ];
-      props.setBStatus(false);
-      props.setMessages([...inputobj, ...res]);
-    },
-    (err)=>{
-      props.setBStatus(false);
-      toast.error("Error found from bot -> "+err);
-      const error = [{ id: v4(), errmsg: "Error : " + err, from: "_bot" }];
-      props.setMessages([...inputobj, ...error]);
-    });
+        };
+        props.setBStatus(false);
+        props.setMessages([...input,res]);
+      },
+      (err) => {
+        props.setBStatus(false);
+        toast.error("Error found from bot -> " + err);
+        const error = { id: v4(), errmsg: "Error : " + err, from: "_bot" };
+        props.setMessages([...input,error]);
+      }
+    );
   };
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
-      handleSubmit();
+      if (window.innerWidth > 615) {
+        handleSubmit();
+      }
     }
-    if (event.key === "Enter" && event.shiftKey) {
-      event.preventDefault();
-      setMessage([{ id: v4(), msg: message[0].msg + "\n", from: "_user" }]);
-    }
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setMessage({ id: v4(), msg: e.target.value, from: "_user" });
+    console.log(message.msg);
   };
 
   return (
@@ -59,17 +63,17 @@ const Input = (props) => {
         <textarea
           type="text"
           className={styles.input}
-          value={message[0].msg}
+          value={message.msg}
           placeholder="Ask your question!"
           onKeyDown={handleKeyDown}
-          onChange={(e) =>
-            setMessage([{ id: v4(), msg: e.target.value, from: "_user" }])
-          }
+          onChange={handleChange}
           autoFocus
         />
-        <button className={styles.send} onClick={handleSubmit}>
-          <AiOutlineSend />
-        </button>
+        {message.msg.length > 0 && (
+          <button className={styles.send} onClick={handleSubmit}>
+            <AiOutlineSend />
+          </button>
+        )}
       </div>
     </div>
   );

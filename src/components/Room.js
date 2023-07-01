@@ -3,6 +3,8 @@ import Input from "./Input";
 import ChatNav from "./ChatNav";
 import styles from "./styles/Room.module.css";
 import { ThreeDots } from "react-loader-spinner";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Room = () => {
   const [messages, setMessages] = useState([]);
@@ -18,9 +20,16 @@ const Room = () => {
     });
   }, [messages]);
 
+
   return (
     <div>
-      <ChatNav setMessages={setMessages} messages={messages} />
+      <ChatNav setMessages={setMessages}/>
+      <ToastContainer 
+      autoClose={2000}
+      hideProgressBar={true}
+      theme="dark"
+      position="top-center"
+      />
       <div className={styles.containerWrap} data-bs-spy="scroll">
         <div
           className={styles.container}
