@@ -20,15 +20,14 @@ const Room = () => {
     });
   }, [messages]);
 
-
   return (
     <div>
-      <ChatNav setMessages={setMessages}/>
-      <ToastContainer 
-      autoClose={2000}
-      hideProgressBar={true}
-      theme="dark"
-      position="top-center"
+      <ChatNav setMessages={setMessages} />
+      <ToastContainer
+        autoClose={2000}
+        hideProgressBar={true}
+        theme="dark"
+        position="top-center"
       />
       <div className={styles.containerWrap} data-bs-spy="scroll">
         <div
@@ -147,7 +146,7 @@ const Receiving = () => {
 };
 
 const Error = (err) => {
-    // console.log(err);
+  // console.log(err);
   return (
     <div className={styles.msgWrap}>
       <div
@@ -177,9 +176,14 @@ const Error = (err) => {
 const Banner = () => {
   return (
     <div className={styles.bannerContainer} style={{ height: "60vh" }}>
-      <h3 className={styles.head}>Examples</h3>
-      <p>"What are the prerequisites for Computer Graphics"</p>
-      <p>"Can I register Cloud Computing"</p>
+      <h2 className={styles.head}>Examples</h2>
+      <div className={styles.samplediv}>
+        <h5 className={styles.head}>Ask about prerequisites for courses.</h5>
+       <div className={styles.qna}>
+          <p>"What are the prerequisites for Computer Graphics"</p>
+          <p>"Can I register Cloud Computing"</p>
+        </div>
+      </div>
     </div>
   );
 };
