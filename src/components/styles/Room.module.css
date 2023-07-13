@@ -1,5 +1,6 @@
 .containerWrap{
     width: 100%;
+    /* background-color: green; */
     display: flex;
     justify-content: center;
 }
@@ -10,7 +11,7 @@
 .msgWrap{
     width: 80%;
     display: flex;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .img{
     width: 50px;
@@ -25,9 +26,8 @@
     margin: 5px;
 }
 .userWrap{
-    width: 99%;
-    margin-top: 5px;
-    /* margin: 5px; */
+    width: 98%;
+    margin-top: 10px;
     display: flex;
     justify-content: flex-end;
     overflow: hidden;
@@ -48,13 +48,11 @@
     margin: 20px;
 }
 .bannerContainer{
-    margin-top: 50px;
     text-align: center;
 }
 .ques{
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
 }
 .bannerContainer p{

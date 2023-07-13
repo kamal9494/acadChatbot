@@ -1,34 +1,38 @@
-.container{
+.container {
     width: 70%;
-    height: 70px;
     display: flex;
-    margin: 10px;
     padding: 10px;
     justify-content: center;
     align-items: center;
     justify-content: space-between;
 }
-.containerWrap{
-    width: 100%;
+
+.containerWrap {
+    position: sticky;
+    top: 0;
+    /* z-index: 100; */
+    background-color: rgb(239, 238, 238);
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.left img{
+.left img {
     width: 50px;
     height: 50px;
 }
-.left span{
+
+.left span {
     margin: 0 10px;
 }
 
-.title{
+.title {
     text-decoration: bold;
     font-size: 20px;
 }
 
-.clear{
+.clear {
     border: none;
     background-color: darkslateblue;
     color: #fff;
@@ -36,41 +40,67 @@
     border-radius: 5px;
 }
 
-@media (max-width: 400px){
-    .container{
+@media (max-width: 400px) {
+    .container {
         width: 100%;
-        height: 70px;
         display: flex;
-        margin: 10px;
         padding: 10px;
         justify-content: center;
         align-items: center;
         justify-content: space-between;
+    }
+
+    .containerWrap {
+        position: sticky;
+        top: 0;
+        /* z-index: 100; */
+        background-color: rgb(239, 238, 238);
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
 @media (min-width: 400px) and (max-width: 614px) {
-    .container{
+    .container {
         width: 100%;
-        height: 70px;
+        padding: 10px;
         display: flex;
-        margin: 10px;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .containerWrap {
+        position: sticky;
+        top: 0;
+        background-color: rgb(239, 238, 238);
+        height: 9vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 615px) and (max-width: 900px) {
+    .container {
+        width: 100%;
+        display: flex;
         padding: 10px;
         justify-content: center;
         align-items: center;
         justify-content: space-between;
     }
-}
 
-@media (min-width: 615px) and (max-width: 900px) {
-    .container{
-        width: 100%;
-        height: 70px;
+    .containerWrap {
+        position: sticky;
+        top: 0;
+        /* z-index: 100; */
+        background-color: rgb(239, 238, 238);
+        height: 10vh;
         display: flex;
-        margin: 10px;
-        padding: 10px;
         justify-content: center;
         align-items: center;
-        justify-content: space-between;
     }
 }

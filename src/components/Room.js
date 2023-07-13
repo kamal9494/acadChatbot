@@ -32,7 +32,7 @@ const Room = () => {
       <div className={styles.containerWrap} data-bs-spy="scroll">
         <div
           className={styles.container}
-          style={{ height: "74vh", overflow: "auto" }}
+          style={{ height: "75vh", overflow: "auto" }}
         >
           {messages.length === 0 ? (
             <Banner />
@@ -62,7 +62,6 @@ const Room = () => {
         cMsg={cMsg}
       />
     </div>
-    // <Banner />
   );
 };
 
@@ -84,7 +83,7 @@ const Bot = (msg) => {
           alt="bot"
         />
       </div>
-      <div className="pe-1" style={{ maxWidth: "60%" }}>
+      <div className="pe-1" style={{ maxWidth: "70%" }}>
         <div>
           <div className={styles.msg}>{msg["msg"]}</div>
         </div>
@@ -96,7 +95,7 @@ const Bot = (msg) => {
 const User = (msg) => {
   return (
     <div className={styles.userWrap}>
-      <div className="pe-1" style={{ maxWidth: "60%" }}>
+      <div className="pe-1" style={{ maxWidth: "70%" }}>
         <div>
           <div className={styles.msg}>{msg["msg"]}</div>
         </div>
@@ -175,7 +174,7 @@ const Error = (err) => {
 
 const Banner = () => {
   return (
-    <div className={styles.bannerContainer} style={{ height: "60vh" }}>
+    <div className={styles.bannerContainer} >
       <h2 className={styles.head}>Examples</h2>
       <div className={styles.samplediv}>
         <h5 className={styles.head}>Ask about prerequisites for courses.</h5>

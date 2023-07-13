@@ -1,11 +1,15 @@
 .container{
-    width: 100%;
     display: flex;
     justify-content: center;
+    /* background-color: rgb(239, 238, 238); */
+    height: 10vh;
+    bottom: 0;
+    position: sticky;
 }
 
 .indiv{
     width: 70%;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,11 +36,11 @@
 .send{
     border: none;
     background-color: darkslateblue;
-    height: 45px;
+    height: 50px;
     margin-left: 10px;
     border-radius: 20%;
     color: #fff;
-    width: 40px;
+    width: 50px;
     /* margin-right: 50px; */
 }
 
@@ -50,7 +54,7 @@
     }
 
     .input{
-        width: 80%;
+        width: 90%;
         height: 50px;
         border-radius: 10px;
         border: none;
@@ -70,7 +74,7 @@
     }
 
     .input{
-        width: 80%;
+        width: 90%;
         height: 50px;
         border-radius: 10px;
         border: none;
