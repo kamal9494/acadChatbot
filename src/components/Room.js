@@ -5,6 +5,7 @@ import styles from "./styles/Room.module.css";
 import { ThreeDots } from "react-loader-spinner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AiFillGithub } from "react-icons/ai";
 
 const Room = () => {
   const [messages, setMessages] = useState([]);
@@ -174,16 +175,30 @@ const Error = (err) => {
 
 const Banner = () => {
   return (
-    <div className={styles.bannerContainer} >
-      <h2 className={styles.head}>Examples</h2>
-      <div className={styles.samplediv}>
-        <h5 className={styles.head}>Ask about prerequisites for courses.</h5>
-       <div className={styles.qna}>
-          <p>"What are the prerequisites for Computer Graphics"</p>
-          <p>"Can I register Cloud Computing"</p>
+    <>
+      <div className={styles.bannerContainer}>
+        <h2 className={styles.head}>Examples</h2>
+        <div className={styles.samplediv}>
+          <h5 className={styles.head}>Ask about prerequisites for courses.</h5>
+          <div className={styles.qna}>
+            <p>"What are the prerequisites for Computer Graphics"</p>
+            <p>"Can I register Cloud Computing"</p>
+          </div>
         </div>
       </div>
-    </div>
+      <div className={styles.doneby}>
+        <div>
+          Done by &nbsp; <AiFillGithub size={25} />
+          <a
+            rel="noreferrer"
+            href="https://github.com/kamal9494/acadChatbot"
+            target="_blank"
+          >
+            kamal9494
+          </a>
+        </div>
+      </div>
+    </>
   );
 };
 

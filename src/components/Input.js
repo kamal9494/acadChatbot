@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Interactions } from "aws-amplify";
 import styles from "./styles/Input.module.css";
-import { AiOutlineSend, AiFillGithub } from "react-icons/ai";
+import { AiOutlineSend } from "react-icons/ai";
 
 const Input = (props) => {
   const [message, setMessage] = useState({ msg: "" });
@@ -58,27 +58,24 @@ const Input = (props) => {
   };
 
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.indiv}>
-          <textarea
-            type="text"
-            className={styles.input}
-            value={message.msg}
-            placeholder="Ask your question!"
-            onKeyDown={handleKeyDown}
-            onChange={handleChange}
-            autoFocus
-          />
-          {message.msg.length > 0 && (
-            <button className={styles.send} onClick={handleSubmit}>
-              <AiOutlineSend />
-            </button>
-          )}
-        </div>
+    <div className={styles.container}>
+      <div className={styles.indiv}>
+        <textarea
+          type="text"
+          className={styles.input}
+          value={message.msg}
+          placeholder="Ask your question!"
+          onKeyDown={handleKeyDown}
+          onChange={handleChange}
+          autoFocus
+        />
+        {message.msg.length > 0 && (
+          <button className={styles.send} onClick={handleSubmit}>
+            <AiOutlineSend />
+          </button>
+        )}
       </div>
-      <div className={styles.footer}>Done by &nbsp; <AiFillGithub size={25}/><a rel="noreferrer" href="https://github.com/kamal9494/acadChatbot" target="_blank">kamal9494</a></div>
-    </>
+    </div>
   );
 };
 

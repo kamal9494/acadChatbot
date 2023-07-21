@@ -45,10 +45,7 @@
     /* margin-right: 50px; */
 }
 
-.footer{
-    display: flex;
-    justify-content: center;
-}
+
 
 @media (max-width: 400px){
     .indiv{
