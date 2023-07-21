@@ -41,9 +41,14 @@
     border-radius: 20%;
     color: #fff;
     width: 50px;
+    transition: 2s;
     /* margin-right: 50px; */
 }
 
+.footer{
+    display: flex;
+    justify-content: center;
+}
 
 @media (max-width: 400px){
     .indiv{
