@@ -24,8 +24,6 @@ const Input = (props) => {
   };
 
   const sendToBot = async (userInput, allMessages) => {
-    console.log(props.messages);
-    console.log(allMessages);
     const botName = process.env.REACT_APP_BOT_NAME;
     try {
       const responce = await Interactions.send(botName, userInput);
@@ -50,6 +48,7 @@ const Input = (props) => {
 
   const noteDown = async (question, err, errorMsg) => {
     try {
+      console.log("Uploading error");
       const docRef = await addDoc(collection(db, "ques"), {
         question: question,
         // error: err,
@@ -61,12 +60,12 @@ const Input = (props) => {
         msg: "Error noted with ID : " + docRef.id,
         from: "_bot",
       };
+      console.log("Uploading done");
       props.setMessages([...errorMsg, error]);
     } catch (e) {
       props.setBotStatus(false);
       console.log(e);
     }
-    console.log(props.messages);
   };
 
   const handleKeyDown = (event) => {
