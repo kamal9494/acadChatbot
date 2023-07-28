@@ -48,7 +48,7 @@ const Input = (props) => {
 
   const noteDown = async (question, err, errorMsg) => {
     try {
-      console.log("Uploading error");
+      // console.log("Uploading error");
       const docRef = await addDoc(collection(db, "ques"), {
         question: question,
         // error: err,
@@ -60,11 +60,11 @@ const Input = (props) => {
         msg: "Error noted with ID : " + docRef.id,
         from: "_bot",
       };
-      console.log("Uploading done");
+      // console.log("Uploading done");
       props.setMessages([...errorMsg, error]);
     } catch (e) {
       props.setBotStatus(false);
-      console.log(e);
+      // console.log(e);
     }
   };
 
