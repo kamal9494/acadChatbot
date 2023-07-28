@@ -2,14 +2,13 @@ import { React, useEffect, useRef, useState } from "react";
 import Input from "./Input";
 import styles from "./styles/Room.module.css";
 import { ThreeDots } from "react-loader-spinner";
-import { ToastContainer,toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiFillGithub } from "react-icons/ai";
 
 const Room = () => {
   const [messages, setMessages] = useState([]);
-  const [bStatus, setBStatus] = useState(false);
-  const [cMsg, setCMsg] = useState("");
+  const [botStatus, setBotStatus] = useState(false);
   const messageEndRef = useRef(null);
 
   useEffect(() => {
@@ -47,7 +46,7 @@ const Room = () => {
                   <Error key={m.id} err={m.errmsg} />
                 )
               )}
-              {bStatus ? <Receiving /> : null}
+              {botStatus ? <Receiving /> : null}
               <div ref={messageEndRef} />
             </div>
           )}
@@ -56,10 +55,7 @@ const Room = () => {
       <Input
         messages={messages}
         setMessages={setMessages}
-        setBStatus={setBStatus}
-        bStatus={bStatus}
-        setCMsg={setCMsg}
-        cMsg={cMsg}
+        setBotStatus={setBotStatus}
       />
     </div>
   );
@@ -70,7 +66,7 @@ const Nav = (props) => {
     props.setMessages([]);
     toast.success("Chat Cleared");
   };
-  return(
+  return (
     <div className={styles.navContainerWrap}>
       <div className={styles.navContainer}>
         <div className={styles.navLeft}>
@@ -89,8 +85,8 @@ const Nav = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Bot = (msg) => {
   return (
@@ -105,6 +101,8 @@ const Bot = (msg) => {
         }}
       >
         <img
+          width="50px"
+          height="40px"
           className={styles.img}
           src={require("../assets/bot.PNG")}
           alt="bot"
@@ -137,6 +135,8 @@ const User = (msg) => {
         }}
       >
         <img
+          width="40px"
+          height="40px"
           className={styles.img}
           src={require("../assets/user.PNG")}
           alt="bot"
@@ -171,7 +171,7 @@ const Receiving = () => {
   );
 };
 
-const Error = (err) => {
+const Error = ({ err }) => {
   // console.log(err);
   return (
     <div className={styles.msgWrap}>
@@ -192,7 +192,9 @@ const Error = (err) => {
       </div>
       <div className="pe-1" style={{ maxWidth: "60%" }}>
         <div>
-          <div className={styles.errmsg}>{err["err"]} Try again</div>
+          <div className={styles.errmsg}>
+            <span className={styles.err}>{err}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -207,12 +209,25 @@ const Banner = () => {
         <div className={styles.samplediv}>
           <h5 className={styles.head}>Ask about prerequisites for courses.</h5>
           <div className={styles.qna}>
-            <p>"What are the prerequisites for Computer Graphics"</p>
-            <p>"Can I register Cloud Computing"</p>
+            <p>
+              <i>What are the prerequisites for Computer Graphics</i>
+            </p>
+            <p>
+              <i>Can I register Cloud Computing</i>
+            </p>
+            <p>
+              <i>Can I register CSE3003 </i>
+            </p>
           </div>
         </div>
       </div>
       <div className={styles.doneby}>
+        <div>
+          <p className={styles.note}>
+            Note : This Bot will answer according to the 2020 curriculum of
+            VIT-AP University.
+          </p>
+        </div>
         <div>
           Done by &nbsp; <AiFillGithub size={25} />
           <a

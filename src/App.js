@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Amplify } from "aws-amplify";
 
+
 const botName = process.env.REACT_APP_BOT_NAME;
 Amplify.configure({
   Auth: {
@@ -20,6 +21,10 @@ Amplify.configure({
     },
   },
 });
+
+
+
+
 
 const App = () => {
   return (
