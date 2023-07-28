@@ -1,9 +1,8 @@
 import { React, useEffect, useRef, useState } from "react";
 import Input from "./Input";
-import ChatNav from "./ChatNav";
 import styles from "./styles/Room.module.css";
 import { ThreeDots } from "react-loader-spinner";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer,toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiFillGithub } from "react-icons/ai";
 
@@ -23,7 +22,7 @@ const Room = () => {
 
   return (
     <div>
-      <ChatNav setMessages={setMessages} />
+      <Nav setMessages={setMessages} />
       <ToastContainer
         autoClose={2000}
         hideProgressBar={true}
@@ -65,6 +64,33 @@ const Room = () => {
     </div>
   );
 };
+
+const Nav = (props) => {
+  const clearChat = () => {
+    props.setMessages([]);
+    toast.success("Chat Cleared");
+  };
+  return(
+    <div className={styles.navContainerWrap}>
+      <div className={styles.navContainer}>
+        <div className={styles.navLeft}>
+          <img
+            className="img-fluid rounded-circle"
+            src={require("../assets/bot.PNG")}
+            alt="bot"
+          />
+          <span className={styles.navTitle}>Academic Bot</span>
+        </div>
+        <div className={styles.navRight}>
+          {/* clear all btn */}
+          <button type="button" className={styles.clear} onClick={clearChat}>
+            Clear Chat
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const Bot = (msg) => {
   return (
