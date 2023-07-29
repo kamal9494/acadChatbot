@@ -88,7 +88,7 @@ const Nav = (props) => {
   );
 };
 
-const Bot = (msg) => {
+const Bot = ({msg}) => {
   return (
     <div className={styles.msgWrap}>
       <div
@@ -108,23 +108,18 @@ const Bot = (msg) => {
           alt="bot"
         />
       </div>
-      <div className="pe-1" style={{ maxWidth: "70%" }}>
+      <div style={{ maxWidth: "100%" }}>
         <div>
-          <div className={styles.msg}>{msg["msg"]}</div>
+          <div className={styles.msg}>{msg}</div>
         </div>
       </div>
     </div>
   );
 };
 
-const User = (msg) => {
+const User = ({msg}) => {
   return (
     <div className={styles.userWrap}>
-      <div className="pe-1" style={{ maxWidth: "70%" }}>
-        <div>
-          <div className={styles.msg}>{msg["msg"]}</div>
-        </div>
-      </div>
       <div
         style={{
           width: "50px",
@@ -142,6 +137,12 @@ const User = (msg) => {
           alt="bot"
         />
       </div>
+      <div style={{ maxWidth: "100%" }}>
+        <div>
+          <div className={styles.msg}>{msg}</div>
+        </div>
+      </div>
+      
     </div>
   );
 };
@@ -190,7 +191,7 @@ const Error = ({ err }) => {
           alt="bot"
         />
       </div>
-      <div className="pe-1" style={{ maxWidth: "60%" }}>
+      <div style={{ maxWidth: "100%" }}>
         <div>
           <div className={styles.errmsg}>
             <span className={styles.err}>{err}</span>
