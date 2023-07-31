@@ -5,6 +5,7 @@ import { ThreeDots } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiFillGithub } from "react-icons/ai";
+import TypedText from './TypedText';
 
 const Room = () => {
   const [messages, setMessages] = useState([]);
@@ -208,17 +209,10 @@ const Banner = () => {
       <div className={styles.bannerContainer}>
         <h2 className={styles.head}>Examples</h2>
         <div className={styles.samplediv}>
-          <h5 className={styles.head}>Ask about prerequisites for courses.</h5>
+          <h5 className={styles.head}>What can you expect from this bot?</h5>
           <div className={styles.qna}>
-            <p>
-              <i>What are the prerequisites for Computer Graphics</i>
-            </p>
-            <p>
-              <i>Can I register Cloud Computing</i>
-            </p>
-            <p>
-              <i>Can I register CSE3003 </i>
-            </p>
+            <h1>Your can ask about </h1> 
+            <TypedText />
           </div>
         </div>
       </div>

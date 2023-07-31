@@ -35,6 +35,7 @@ const Input = (props) => {
       props.setBotStatus(false);
       props.setMessages([...allMessages, botMsg]);
     } catch (err) {
+      console.log(err);
       const error = {
         id: v4(),
         errmsg: "Opps! Error Occurred",
