@@ -1,3 +1,9 @@
-.typed-cursor{
-    opacity: 0;
+.ele{
+    font-size: 24px;
+}
+.cur{
+    font-size: 20px;
+}
+.Typewriter{
+    text-align: center;
 }

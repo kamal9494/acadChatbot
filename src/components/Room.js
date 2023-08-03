@@ -5,7 +5,8 @@ import { ThreeDots } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiFillGithub } from "react-icons/ai";
-import TypedText from './TypedText';
+import TypedText from "./TypedText";
+import Sample from "./Sample";
 
 const Room = () => {
   const [messages, setMessages] = useState([]);
@@ -89,7 +90,7 @@ const Nav = (props) => {
   );
 };
 
-const Bot = ({msg}) => {
+const Bot = ({ msg }) => {
   return (
     <div className={styles.msgWrap}>
       <div
@@ -118,7 +119,7 @@ const Bot = ({msg}) => {
   );
 };
 
-const User = ({msg}) => {
+const User = ({ msg }) => {
   return (
     <div className={styles.userWrap}>
       <div
@@ -143,7 +144,6 @@ const User = ({msg}) => {
           <div className={styles.msg}>{msg}</div>
         </div>
       </div>
-      
     </div>
   );
 };
@@ -204,17 +204,38 @@ const Error = ({ err }) => {
 };
 
 const Banner = () => {
+  const questions = [
+    {
+      title: "Prerequisites",
+      sample: "what are the prerequisites for Cloud Computing",
+    },
+    {
+      title: "Course Details",
+      sample: "What is CSE4001",
+    },
+    {
+      title: "Credits",
+      sample: "Total how many credits for 2020 batch",
+    },
+  ];
   return (
     <>
       <div className={styles.bannerContainer}>
-        <h2 className={styles.head}>Examples</h2>
         <div className={styles.samplediv}>
-          <h5 className={styles.head}>What can you expect from this bot?</h5>
+          {/* <h5 className={styles.head}>What can you expect from this bot?</h5> */}
           <div className={styles.qna}>
-            <h1>Your can ask about </h1> 
+            <h2 className={styles.head}>Your can ask about </h2>
             <TypedText />
           </div>
         </div>
+        <h2 className={styles.head}>Examples</h2>
+      </div>
+      <div>
+        {
+          questions.map((q) => {
+            return <Sample title={q.title} sample={q.sample}/>
+          })
+        }
       </div>
       <div className={styles.doneby}>
         <div>

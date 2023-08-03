@@ -1,6 +1,5 @@
 .containerWrap{
     width: 100%;
-    /* background-color: green; */
     display: flex;
     justify-content: center;
 }
@@ -12,7 +11,6 @@
     width: 100%;
     display: flex;
     padding: 10px;
-    /* border: .2px solid #1b1b1b; */
 }
 .img{
     border-radius: 50%;
@@ -45,18 +43,12 @@
     opacity: .7;
 }
 .head{
-    color:rgb(89, 88, 88);
-    /* font-size: 17px; */
-    margin: 15px;
+    /* color:rgb(89, 88, 88); */
+    text-align: center;
+    padding: 5px 0;
 }
 .bannerContainer{
-    margin-top: 100px;
-    text-align: center;
-}
-.ques{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: 10px;
 }
 .bannerContainer p{
     margin-top: 5px;
@@ -67,8 +59,8 @@
 }
 
 .doneby{
+    padding: 15px;
     opacity: .7;
-    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

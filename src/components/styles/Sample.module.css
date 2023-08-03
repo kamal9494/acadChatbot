@@ -1,0 +1,16 @@
+.box{
+    padding: 0 10%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* text-align: center; */
+}
+.title{
+    padding: 3px 10px;
+}
+.que{
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+    border-radius: 5px;
+}
