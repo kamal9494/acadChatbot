@@ -221,8 +221,7 @@ const Banner = () => {
   return (
     <>
       <div className={styles.bannerContainer}>
-        <div className={styles.samplediv}>
-          {/* <h5 className={styles.head}>What can you expect from this bot?</h5> */}
+        <div>
           <div className={styles.qna}>
             <h2 className={styles.head}>Your can ask about </h2>
             <TypedText />
@@ -230,7 +229,7 @@ const Banner = () => {
         </div>
         <h2 className={styles.head}>Examples</h2>
       </div>
-      <div>
+      <div className={styles.samples}>
         {
           questions.map((q) => {
             return <Sample title={q.title} sample={q.sample}/>
