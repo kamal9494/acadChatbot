@@ -43,9 +43,8 @@
     opacity: .7;
 }
 .head{
-    /* color:rgb(89, 88, 88); */
     text-align: center;
-    padding: 5px 0;
+    font-size: 30px;
 }
 .bannerContainer{
     margin-top: 10px;
@@ -56,6 +55,11 @@
 }
 .qna{
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.type{
+    margin: 9px 0 0 10px;
 }
 .doneby{
     padding: 15px;

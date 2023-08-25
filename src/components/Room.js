@@ -207,15 +207,15 @@ const Banner = () => {
   const questions = [
     {
       title: "Prerequisites",
-      sample: "what are the prerequisites for Cloud Computing",
+      sample: "What are the prerequisites for Cloud Computing?",
     },
     {
       title: "Course Details",
-      sample: "What is CSE4001",
+      sample: "What is CSE4001?",
     },
     {
       title: "Credits",
-      sample: "Total how many credits for 2020 batch",
+      sample: "Total credits for 2020 batch?",
     },
   ];
   return (
@@ -223,8 +223,7 @@ const Banner = () => {
       <div className={styles.bannerContainer}>
         <div>
           <div className={styles.qna}>
-            <h2 className={styles.head}>Your can ask about </h2>
-            <TypedText />
+            <span className={styles.type}>{<TypedText />}</span>
           </div>
         </div>
         <h2 className={styles.head}>Examples</h2>

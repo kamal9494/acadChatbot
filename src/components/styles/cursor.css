@@ -1,9 +1,9 @@
-.ele{
-    font-size: 24px;
+.Typewriter__wrapper{
+    font-size: 2rem;
 }
-.cur{
-    font-size: 24px;
+.Typewriter__cursor{
+    font-size: 2rem;
 }
 .Typewriter{
-    text-align: center;
+    padding: 25px;
 }
