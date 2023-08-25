@@ -58,9 +58,9 @@
     display: flex;
     justify-content: center;
 }
-.type{
+/* .type{
     margin: 9px 0 0 10px;
-}
+} */
 .doneby{
     padding: 15px;
     opacity: .7;
