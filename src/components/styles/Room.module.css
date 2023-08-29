@@ -3,9 +3,6 @@
     display: flex;
     justify-content: center;
 }
-.container{
-    width: 70%;
-}
 
 .msgWrap{
     width: 100%;
@@ -48,6 +45,9 @@
     margin: 5px;
     color: red;
     opacity: .7;
+}
+.fixtype{
+    height: 100px;
 }
 .head{
     text-align: center;
@@ -202,5 +202,8 @@
         align-items: center;
         justify-content: space-between;
         border-radius: 5px;
+    }
+    .container{
+        width: 100%;
     }
 } 

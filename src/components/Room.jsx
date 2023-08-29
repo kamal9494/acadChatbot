@@ -173,13 +173,13 @@ const Banner = () => {
   return (
     <>
       <div className={styles.bannerContainer}>
-        <div>
+        <div className={styles.fixtype}>
           <div className={styles.qna}>
-            <span className={styles.type}>{<TypedText />}</span>
+            {<TypedText />}
           </div>
         </div>
-        <h2 className={styles.head}>Examples</h2>
       </div>
+      <h2 className={styles.head}>Examples</h2>
       <div className={styles.samples}>
         {questions.map((q) => {
           return <Sample key={q.title} title={q.title} sample={q.sample} />;

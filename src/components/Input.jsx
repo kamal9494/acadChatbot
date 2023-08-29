@@ -54,7 +54,6 @@ const Input = (props) => {
     }
   };
 
-
   const handleSubmit = () => {
     console.log(message);
     if (message.msg.trim() === "") {
@@ -69,17 +68,14 @@ const Input = (props) => {
     }
   };
 
-    const handleKeyDown = (event) => {
-      if (event.key === "Enter") {
-        if(!event.shiftKey){
-          event.preventDefault();
-          handleSubmit();
-        }
-        // if (window.innerWidth > 615) {
-          
-        // }
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      if (window.innerWidth > 615) {
+        event.preventDefault();
+        handleSubmit();
       }
-    };
+    }
+  };
 
   const handleChange = (e) => {
     setMessage({ ...message, msg: e.target.value });
@@ -97,9 +93,15 @@ const Input = (props) => {
           onChange={handleChange}
           autoFocus
         />
-        <button className={message.msg.length > 0 ? styles.send : styles.hide} onClick={handleSubmit}>
-            <AiOutlineSend />
-          </button>
+        {
+          message.msg.trim().length > 0 ?(
+            <div>
+              <button className={styles.send} onClick={handleSubmit}>
+              <AiOutlineSend />
+              </button>
+            </div>
+          ) : null
+        }
       </div>
     </div>
   );
