@@ -23,7 +23,7 @@ const Room = () => {
 
   return (
     <div>
-      <Nav setMessages={setMessages} />
+      <Nav messages={messages} setMessages={setMessages} />
       <ToastContainer
         autoClose={2000}
         hideProgressBar={true}
@@ -39,15 +39,9 @@ const Room = () => {
             <Banner />
           ) : (
             <div>
-              {messages.map((m) =>
-                m.from === "_user" ? (
-                  <User key={m.id} msg={m.msg} />
-                ) : m.from === "_bot" && !m.errmsg ? (
-                  <Bot key={m.id} msg={m.msg} />
-                ) : (
-                  <Error key={m.id} err={m.errmsg} />
-                )
-              )}
+              {messages.map((msg) => (
+                <Message key={msg.id} msg={msg.msg} errmsg={msg.errmsg} from={msg.from}/>
+              ))}
               {botStatus ? <Receiving /> : null}
               <div ref={messageEndRef} />
             </div>
@@ -63,10 +57,13 @@ const Room = () => {
   );
 };
 
-const Nav = (props) => {
+// Navbar
+const Nav = ({messages,setMessages}) => {
   const clearChat = () => {
-    props.setMessages([]);
-    toast.success("Chat Cleared");
+    if (messages.length > 0) {
+      setMessages([]);
+      toast.success("Chat Cleared");
+    }else toast.error("No messages");
   };
   return (
     <div className={styles.navContainerWrap}>
@@ -90,38 +87,10 @@ const Nav = (props) => {
   );
 };
 
-const Bot = ({ msg }) => {
+// Messages // user || bot
+const Message = ({ msg, from, errmsg }) => {
   return (
-    <div className={styles.msgWrap}>
-      <div
-        style={{
-          width: "50px",
-          padding: "2px",
-          display: "flex",
-          justifyContent: "flex-start",
-          flexDirection: "column",
-        }}
-      >
-        <img
-          width="50px"
-          height="40px"
-          className={styles.img}
-          src={require("../assets/bot.PNG")}
-          alt="bot"
-        />
-      </div>
-      <div style={{ maxWidth: "100%" }}>
-        <div>
-          <div className={styles.msg}>{msg}</div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const User = ({ msg }) => {
-  return (
-    <div className={styles.userWrap}>
+    <div className={from ==="_user" ? styles.userWrap : styles.botWrap}>
       <div
         style={{
           width: "50px",
@@ -131,23 +100,34 @@ const User = ({ msg }) => {
           flexDirection: "column",
         }}
       >
-        <img
-          width="40px"
-          height="40px"
-          className={styles.img}
-          src={require("../assets/user.PNG")}
-          alt="bot"
-        />
+        {from === "_user" ? (
+          <img
+            width="40px"
+            height="40px"
+            className={styles.img}
+            src={require("../assets/user.PNG")}
+            alt="bot"
+          />
+        ) : (
+          <img
+            width="40px"
+            height="40px"
+            className={styles.img}
+            src={require("../assets/bot.PNG")}
+            alt="bot"
+          />
+        )}
       </div>
       <div style={{ maxWidth: "100%" }}>
         <div>
-          <div className={styles.msg}>{msg}</div>
+          <div className={errmsg ? styles.errmsg : styles.msg}>{errmsg ? errmsg : msg}</div>
         </div>
       </div>
     </div>
   );
 };
 
+// Receiving
 const Receiving = () => {
   return (
     <div key={999} className={styles.msgWrap}>
@@ -173,36 +153,8 @@ const Receiving = () => {
   );
 };
 
-const Error = ({ err }) => {
-  // console.log(err);
-  return (
-    <div className={styles.msgWrap}>
-      <div
-        style={{
-          width: "50px",
-          padding: "2px",
-          display: "flex",
-          justifyContent: "flex-start",
-          flexDirection: "column",
-        }}
-      >
-        <img
-          className={styles.img}
-          src={require("../assets/bot.PNG")}
-          alt="bot"
-        />
-      </div>
-      <div style={{ maxWidth: "100%" }}>
-        <div>
-          <div className={styles.errmsg}>
-            <span className={styles.err}>{err}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
+// Banner page
 const Banner = () => {
   const questions = [
     {
@@ -229,11 +181,9 @@ const Banner = () => {
         <h2 className={styles.head}>Examples</h2>
       </div>
       <div className={styles.samples}>
-        {
-          questions.map((q) => {
-            return <Sample title={q.title} sample={q.sample}/>
-          })
-        }
+        {questions.map((q) => {
+          return <Sample key={q.title} title={q.title} sample={q.sample} />;
+        })}
       </div>
       <div className={styles.doneby}>
         <div>

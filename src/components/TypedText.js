@@ -2,24 +2,20 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import './styles/cursor.css';
 const TypedText = () => {
+  const textsToType = [
+    "You can ask about Courses details",
+    "Prerequisites of any course",
+    "Total Credits"
+  ];
   return (
     <Typewriter
-      onInit={(typewriter) => {
-        typewriter.typeString('You can ask about ')
-        .pauseFor(1500)
-        typewriter.typeString('Courses details')
-        .pauseFor(1500)
-        .deleteChars(15)
-        typewriter.typeString('Prerequisites of any course')
-        .pauseFor(1500)
-        .deleteChars(27)
-        typewriter.typeString('Total Credits')
-        .pauseFor(1500)
-        .deleteChars(13)
-        .deleteAll()
-        .start()
+      options={{
+        strings: textsToType,
+        autoStart: true,
+        loop: true,
+        pauseFor: 1500,
+        deleteSpeed: 30,
       }}
-      loop={true}
     />
   );
 };

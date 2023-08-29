@@ -1,9 +1,7 @@
-import "./App.css";
 import Room from "./components/Room";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Amplify } from "aws-amplify";
-
 
 const botName = process.env.REACT_APP_BOT_NAME;
 Amplify.configure({
@@ -21,10 +19,6 @@ Amplify.configure({
     },
   },
 });
-
-
-
-
 
 const App = () => {
   return (

@@ -1,7 +1,6 @@
 .container{
     display: flex;
     justify-content: center;
-    /* background-color: rgb(239, 238, 238); */
     height: 10vh;
     bottom: 0;
     position: sticky;
@@ -14,11 +13,8 @@
     justify-content: center;
     align-items: center;
 }
-
-
-
 .input{
-    /* background-color: red; */
+    margin-right: 10px;
     width: 70%;
     height: 50px;
     border-radius: 10px;
@@ -37,12 +33,12 @@
     border: none;
     background-color: darkslateblue;
     height: 50px;
-    margin-left: 10px;
     border-radius: 20%;
     color: #fff;
     width: 50px;
-    transition: 2s;
-    /* margin-right: 50px; */
+}
+.hide{
+    visibility: hidden;
 }
 
 
@@ -57,7 +53,6 @@
 
     .input{
         width: 90%;
-        height: 50px;
         border-radius: 10px;
         border: none;
         font-size: 15px;
@@ -77,7 +72,6 @@
 
     .input{
         width: 90%;
-        height: 50px;
         border-radius: 10px;
         border: none;
         font-size: 18px;
@@ -96,7 +90,6 @@
 
     .input{
         width: 80%;
-        height: 50px;
         border-radius: 10px;
         border: none;
         font-size: 16px;

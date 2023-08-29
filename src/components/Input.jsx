@@ -9,19 +9,7 @@ import { db } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Input = (props) => {
-  const [message, setMessage] = useState({id: v4(),msg: "",from:"_user"});
-
-  const handleSubmit = () => {
-    if (message == null || message.msg.length === 0) {
-      toast.warning("Enter your Query");
-    } else {
-      const allMessages = [...props.messages, message];
-      props.setMessages(allMessages);
-      props.setBotStatus(true);
-      sendToBot(message.msg,allMessages);
-      setMessage({id: v4(),msg: "",from:"_user"});
-    }
-  };
+  const [message, setMessage] = useState({ id: v4(), msg: "", from: "_user" });
 
   const sendToBot = async (userInput, allMessages) => {
     const botName = process.env.REACT_APP_BOT_NAME;
@@ -47,12 +35,11 @@ const Input = (props) => {
     }
   };
 
+  // saving the question in firebase
   const noteDown = async (question, err, errorMsg) => {
     try {
-      // console.log("Uploading error");
       const docRef = await addDoc(collection(db, "ques"), {
         question: question,
-        // error: err,
       });
       props.setBotStatus(false);
       toast.error("Error Noted");
@@ -61,26 +48,41 @@ const Input = (props) => {
         msg: "Error noted with ID : " + docRef.id,
         from: "_bot",
       };
-      // console.log("Uploading done");
       props.setMessages([...errorMsg, error]);
     } catch (e) {
       props.setBotStatus(false);
-      // console.log(e);
     }
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter" && !event.shiftKey) {
-      event.preventDefault();
-      if (window.innerWidth > 615) {
-        handleSubmit();
-      }
+
+  const handleSubmit = () => {
+    console.log(message);
+    if (message.msg.trim() === "") {
+      toast.warning("Enter your Query");
+      setMessage({ id: v4(), msg: "", from: "_user" });
+    } else {
+      const allMessages = [...props.messages, message];
+      props.setMessages(allMessages);
+      props.setBotStatus(true);
+      sendToBot(message.msg, allMessages);
+      setMessage({ id: v4(), msg: "", from: "_user" });
     }
   };
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Enter") {
+        if(!event.shiftKey){
+          event.preventDefault();
+          handleSubmit();
+        }
+        // if (window.innerWidth > 615) {
+          
+        // }
+      }
+    };
 
   const handleChange = (e) => {
-    e.preventDefault();
-    setMessage({...message,msg: e.target.value});
+    setMessage({ ...message, msg: e.target.value });
   };
 
   return (
@@ -95,11 +97,9 @@ const Input = (props) => {
           onChange={handleChange}
           autoFocus
         />
-        {message.msg.length > 0 && (
-          <button className={styles.send} onClick={handleSubmit}>
+        <button className={message.msg.length > 0 ? styles.send : styles.hide} onClick={handleSubmit}>
             <AiOutlineSend />
           </button>
-        )}
       </div>
     </div>
   );
