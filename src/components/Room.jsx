@@ -192,7 +192,7 @@ const Banner = () => {
             VIT-AP University.
           </p>
         </div>
-        <div>
+        <div className={styles.abt}>
           Done by &nbsp; <AiFillGithub size={25} />
           <a
             rel="noreferrer"

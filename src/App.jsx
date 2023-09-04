@@ -1,5 +1,4 @@
 import Room from "./components/Room";
-import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Amplify } from "aws-amplify";
 
