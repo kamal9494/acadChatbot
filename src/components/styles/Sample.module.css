@@ -8,6 +8,8 @@
 }
 .title{
     padding: 3px 10px;
+    font-weight: 500;
+    font-size: 1rem;
 }
 .que{
     background-color: rgb(230, 230, 230);
