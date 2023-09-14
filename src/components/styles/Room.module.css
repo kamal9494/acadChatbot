@@ -79,10 +79,9 @@
 }
 
 .navContainer {
-    /* background-color: rgb(239, 238, 238); */
     background-color: #1b1b1b ;
-    /* border-radius: 10px; */
     width: 70%;
+    height: 70px;
     display: flex;
     padding: 10px;
     justify-content: center;
@@ -93,7 +92,6 @@
 .navContainerWrap {
     position: sticky;
     top: 0;
-    /* z-index: 100; */
     display: flex;
     justify-content: center;
     align-items: center;
