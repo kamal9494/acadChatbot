@@ -7,6 +7,7 @@
 .msgWrap{
     width: 100%;
     display: flex;
+    align-items: center;
     padding: 10px;
 }
 .img{
@@ -24,8 +25,8 @@
     display: flex;
     overflow: hidden;
     background-color: #efefef;
-    /* border: .2px solid #1b1b1b; */
-    /* background-color: rgb(230, 230, 230); */
+    display: flex;
+    align-items: center;
 }
 .botWrap{
     padding: 10px;
@@ -33,8 +34,8 @@
     display: flex;
     overflow: hidden;
     background-color: #ffffff;
-    /* border: .2px solid #1b1b1b; */
-    /* background-color: rgb(230, 230, 230); */
+    display: flex;
+    align-items: center;
 }
 .loaderdiv{
     margin-left: 10px;

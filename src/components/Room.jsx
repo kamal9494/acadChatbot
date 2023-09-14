@@ -4,7 +4,7 @@ import styles from "./styles/Room.module.css";
 import { ThreeDots } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AiFillGithub } from "react-icons/ai";
+import { AiFillGithub, AiFillRobot, AiOutlineUser } from "react-icons/ai";
 import TypedText from "./TypedText";
 import Sample from "./Sample";
 
@@ -40,7 +40,12 @@ const Room = () => {
           ) : (
             <div>
               {messages.map((msg) => (
-                <Message key={msg.id} msg={msg.msg} errmsg={msg.errmsg} from={msg.from}/>
+                <Message
+                  key={msg.id}
+                  msg={msg.msg}
+                  errmsg={msg.errmsg}
+                  from={msg.from}
+                />
               ))}
               {botStatus ? <Receiving /> : null}
               <div ref={messageEndRef} />
@@ -58,22 +63,18 @@ const Room = () => {
 };
 
 // Navbar
-const Nav = ({messages,setMessages}) => {
+const Nav = ({ messages, setMessages }) => {
   const clearChat = () => {
     if (messages.length > 0) {
       setMessages([]);
       toast.success("Chat Cleared");
-    }else toast.error("No messages");
+    } else toast.error("No messages");
   };
   return (
     <div className={styles.navContainerWrap}>
       <div className={styles.navContainer}>
         <div className={styles.navLeft}>
-          <img
-            className="img-fluid rounded-circle"
-            src={require("../assets/bot.PNG")}
-            alt="bot"
-          />
+          <AiFillRobot size={30} />
           <span className={styles.navTitle}>Academic Bot</span>
         </div>
         <div className={styles.navRight}>
@@ -90,7 +91,7 @@ const Nav = ({messages,setMessages}) => {
 // Messages // user || bot
 const Message = ({ msg, from, errmsg }) => {
   return (
-    <div className={from ==="_user" ? styles.userWrap : styles.botWrap}>
+    <div className={from === "_user" ? styles.userWrap : styles.botWrap}>
       <div
         style={{
           width: "50px",
@@ -101,26 +102,16 @@ const Message = ({ msg, from, errmsg }) => {
         }}
       >
         {from === "_user" ? (
-          <img
-            width="40px"
-            height="40px"
-            className={styles.img}
-            src={require("../assets/user.PNG")}
-            alt="bot"
-          />
+          <AiOutlineUser size={30} />
         ) : (
-          <img
-            width="40px"
-            height="40px"
-            className={styles.img}
-            src={require("../assets/bot.PNG")}
-            alt="bot"
-          />
+          <AiFillRobot size={30} />
         )}
       </div>
       <div style={{ maxWidth: "100%" }}>
         <div>
-          <div className={errmsg ? styles.errmsg : styles.msg}>{errmsg ? errmsg : msg}</div>
+          <div className={errmsg ? styles.errmsg : styles.msg}>
+            {errmsg ? errmsg : msg}
+          </div>
         </div>
       </div>
     </div>
@@ -140,11 +131,7 @@ const Receiving = () => {
           flexDirection: "column",
         }}
       >
-        <img
-          className={styles.img}
-          src={require("../assets/bot.PNG")}
-          alt="bot"
-        />
+        <AiFillRobot size={30} />
       </div>
       <div className={styles.loaderdiv}>
         <ThreeDots width="30" height="60" />
@@ -152,7 +139,6 @@ const Receiving = () => {
     </div>
   );
 };
-
 
 // Banner page
 const Banner = () => {
@@ -174,9 +160,7 @@ const Banner = () => {
     <>
       <div className={styles.bannerContainer}>
         <div className={styles.fixtype}>
-          <div className={styles.qna}>
-            {<TypedText />}
-          </div>
+          <div className={styles.qna}>{<TypedText />}</div>
         </div>
       </div>
       <h2 className={styles.head}>Examples</h2>
