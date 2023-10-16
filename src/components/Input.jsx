@@ -97,7 +97,7 @@ const Input = (props) => {
           message.msg.trim().length > 0 ?(
             <div>
               <button className={styles.send} onClick={handleSubmit}>
-              <AiOutlineSend />
+              <AiOutlineSend size={22}/>
               </button>
             </div>
           ) : null

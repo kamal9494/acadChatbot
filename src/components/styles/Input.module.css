@@ -30,6 +30,9 @@
     box-shadow: 0 0 10px rgb(73, 73, 73);
 }
 .send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     background-color: darkslateblue;
     height: 50px;
