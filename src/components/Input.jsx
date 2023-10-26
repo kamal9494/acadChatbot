@@ -55,7 +55,6 @@ const Input = (props) => {
   };
 
   const handleSubmit = () => {
-    console.log(message);
     if (message.msg.trim() === "") {
       toast.warning("Enter your Query");
       setMessage({ id: v4(), msg: "", from: "_user" });
@@ -70,9 +69,13 @@ const Input = (props) => {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter" && !event.shiftKey) {
-      if (window.innerWidth > 615) {
-        event.preventDefault();
-        handleSubmit();
+      if (props.botStatus) {
+        toast.warning("Wait for the responce");
+      } else {
+        if (window.innerWidth > 615) {
+          event.preventDefault();
+          handleSubmit();
+        }
       }
     }
   };
@@ -93,13 +96,15 @@ const Input = (props) => {
           onChange={handleChange}
           autoFocus
         />
-        {message.msg.trim().length > 0 ? (
-          <div>
-            <button className={styles.send} onClick={handleSubmit}>
-              <AiOutlineSend size={22} />
-            </button>
-          </div>
-        ) : null}
+        <div>
+          <button
+            className={styles.send}
+            onClick={handleSubmit}
+            disabled={props.botStatus}
+          >
+            <AiOutlineSend size={22} />
+          </button>
+        </div>
       </div>
       <div>
         <p className={styles.note}>

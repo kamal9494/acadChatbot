@@ -56,6 +56,7 @@ const Room = () => {
       <Input
         messages={messages}
         setMessages={setMessages}
+        botStatus={botStatus}
         setBotStatus={setBotStatus}
       />
     </div>
@@ -165,8 +166,8 @@ const Banner = () => {
       </div>
       <h2 className={styles.head}>Examples</h2>
       <div className={styles.samples}>
-        {questions.map((q) => {
-          return <Sample key={q.title} title={q.title} sample={q.sample} />;
+        {questions.map((question,index) => {
+          return <Sample key={index} title={question.title} sample={question.sample} />;
         })}
       </div>
       <div className={styles.doneby}>
