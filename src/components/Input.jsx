@@ -88,20 +88,24 @@ const Input = (props) => {
           type="text"
           className={styles.input}
           value={message.msg}
-          placeholder="Ask your question!"
+          placeholder="Ask a question!"
           onKeyDown={handleKeyDown}
           onChange={handleChange}
           autoFocus
         />
-        {
-          message.msg.trim().length > 0 ?(
-            <div>
-              <button className={styles.send} onClick={handleSubmit}>
-              <AiOutlineSend size={22}/>
-              </button>
-            </div>
-          ) : null
-        }
+        {message.msg.trim().length > 0 ? (
+          <div>
+            <button className={styles.send} onClick={handleSubmit}>
+              <AiOutlineSend size={22} />
+            </button>
+          </div>
+        ) : null}
+      </div>
+      <div>
+        <p className={styles.note}>
+          Note : This Bot will answer according to the 2020 curriculum of VIT-AP
+          University.
+        </p>
       </div>
     </div>
   );

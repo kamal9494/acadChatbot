@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 10vh;
     bottom: 0;
@@ -7,7 +8,7 @@
 }
 
 .indiv{
-    width: 90%;
+    width: 100%;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -39,6 +40,14 @@
     border-radius: 20%;
     color: #fff;
     width: 50px;
+}
+
+.note{
+    text-align: center;
+    color: red;
+    opacity: .7;
+    font-size: small;
+    padding: 0 15px;
 }
 
 

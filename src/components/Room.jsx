@@ -170,12 +170,6 @@ const Banner = () => {
         })}
       </div>
       <div className={styles.doneby}>
-        <div>
-          <p className={styles.note}>
-            Note : This Bot will answer according to the 2020 curriculum of
-            VIT-AP University.
-          </p>
-        </div>
         <div className={styles.abt}>
           Done by &nbsp; <AiFillGithub size={25} />
           <a
