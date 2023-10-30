@@ -90,17 +90,20 @@ const Input = (props) => {
         <textarea
           type="text"
           className={styles.input}
-          value={message.msg}
+          // value={message.msg}
           placeholder="Ask a question!"
           onKeyDown={handleKeyDown}
           onChange={handleChange}
           autoFocus
+          value="This Service was temporarily unavailable..."
+          disabled
         />
         <div>
           <button
             className={styles.send}
             onClick={handleSubmit}
-            disabled={props.botStatus}
+            // disabled={props.botStatus}
+            disabled="true"
           >
             <AiOutlineSend size={22} />
           </button>
