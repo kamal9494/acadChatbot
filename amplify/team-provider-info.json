@@ -1,15 +1,26 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-acadbot-dev-185926-authRole",
-      "UnauthRoleArn": "arn:aws:iam::705407349213:role/amplify-acadbot-dev-185926-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::705407349213:role/amplify-acadbot-dev-185926-authRole",
+      "AuthRoleName": "amplify-chatbotcc-dev-101553-authRole",
+      "UnauthRoleArn": "arn:aws:iam::063395465600:role/amplify-chatbotcc-dev-101553-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::063395465600:role/amplify-chatbotcc-dev-101553-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-acadbot-dev-185926-deployment",
-      "UnauthRoleName": "amplify-acadbot-dev-185926-unauthRole",
-      "StackName": "amplify-acadbot-dev-185926",
-      "StackId": "arn:aws:cloudformation:us-east-1:705407349213:stack/amplify-acadbot-dev-185926/62f1edd0-dac8-11ed-a730-0ef69db519d5",
-      "AmplifyAppId": "d204hup0iazkbf"
+      "DeploymentBucketName": "amplify-chatbotcc-dev-101553-deployment",
+      "UnauthRoleName": "amplify-chatbotcc-dev-101553-unauthRole",
+      "StackName": "amplify-chatbotcc-dev-101553",
+      "StackId": "arn:aws:cloudformation:us-east-1:063395465600:stack/amplify-chatbotcc-dev-101553/8da5e080-7871-11ee-81db-0a014a74f193",
+      "AmplifyAppId": "d3l8ukjrojm5qr"
+    },
+    "categories": {
+      "auth": {
+        "chatbotcc": {}
+      },
+      "interactions": {
+        "academicbotRes": {
+          "deploymentBucketName": "amplify-chatbotcc-dev-101553-deployment",
+          "s3Key": "amplify-builds/academicbotRes-4e77567374516a466433-build.zip"
+        }
+      }
     }
   }
 }
