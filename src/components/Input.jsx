@@ -95,6 +95,7 @@ const Input = (props) => {
           onKeyDown={handleKeyDown}
           onChange={handleChange}
           autoFocus
+          // value=""
         />
         <div>
           <button
