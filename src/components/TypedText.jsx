@@ -3,9 +3,9 @@ import Typewriter from "typewriter-effect";
 import './styles/cursor.css';
 const TypedText = () => {
   const textsToType = [
-    "You can ask about Courses details.",
-    "Prerequisites of any course!",
-    "Total Credits!"
+    "courses details.",
+    "prerequisites of any course!",
+    "total credits!"
   ];
   return (
     <Typewriter

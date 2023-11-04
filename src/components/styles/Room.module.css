@@ -49,6 +49,7 @@
 }
 .fixtype{
     height: 100px;
+    margin-bottom: 15px;
 }
 .head{
     text-align: center;
@@ -61,12 +62,16 @@
     margin-top: 5px;
     color: rgb(108, 108, 108);
 }
+.fixeddiv{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+}
 .qna{
     margin-top: 10px;
     display: flex;
     justify-content: center;
 }
-
 .doneby{
     padding: 15px;
     opacity: .7;
@@ -116,6 +121,7 @@
     text-decoration: bold;
     font-size: 20px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 500;
 }
 
 .clear {

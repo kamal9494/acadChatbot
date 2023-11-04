@@ -2,13 +2,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 10vh;
     bottom: 0;
     position: sticky;
 }
 
 .indiv{
-    width: 100%;
+    width: 80%;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -18,11 +19,10 @@
     margin-right: 10px;
     width: 70%;
     height: 50px;
-    border-radius: 10px;
-    border: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     font-size: 16px;
-    padding: 12px;
-    box-shadow: 0 0 10px rgb(73, 73, 73);
+    padding: 10px;
     overflow: hidden;
 }
 

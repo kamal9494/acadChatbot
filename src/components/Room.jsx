@@ -161,6 +161,7 @@ const Banner = () => {
     <>
       <div className={styles.bannerContainer}>
         <div className={styles.fixtype}>
+          <div className={styles.fixeddiv}>You can ask about</div>
           <div className={styles.qna}>{<TypedText />}</div>
         </div>
       </div>
