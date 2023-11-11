@@ -26,7 +26,7 @@ const Input = (props) => {
       console.log(err);
       const error = {
         id: v4(),
-        errmsg: "Opps! Error Occurred",
+        errmsg: "Opps! Error Occurred "+err,
         from: "_bot",
       };
       const errorMsg = [...allMessages, error];
@@ -56,7 +56,7 @@ const Input = (props) => {
 
   const handleSubmit = () => {
     if (message.msg.trim() === "") {
-      toast.warning("Enter your Query");
+      toast.warning("Enter your Query"); 
       setMessage({ id: v4(), msg: "", from: "_user" });
     } else {
       const allMessages = [...props.messages, message];
