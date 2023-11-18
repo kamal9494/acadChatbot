@@ -95,7 +95,7 @@ const Message = ({ msg, from, errmsg }) => {
     <div className={from === "_user" ? styles.userWrap : styles.botWrap}>
       <div
         style={{
-          width: "50px",
+          // width: "50px",
           padding: "2px",
           display: "flex",
           justifyContent: "flex-end",
@@ -103,17 +103,23 @@ const Message = ({ msg, from, errmsg }) => {
         }}
       >
         {from === "_user" ? (
-          <AiOutlineUser size={30} />
+          <div className={styles.usertag}>
+            <AiOutlineUser size={25} />
+            <p className={styles.bold}>You</p>
+          </div>
         ) : (
-          <AiFillRobot size={30} />
+          <div className={styles.usertag}>
+            <AiFillRobot size={26} />
+            <p className={styles.bold}>Bot</p>
+          </div>
         )}
       </div>
       <div style={{ maxWidth: "100%" }}>
-        <div>
+        {/* <div> */}
           <div className={errmsg ? styles.errmsg : styles.msg}>
             {errmsg ? errmsg : msg}
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );

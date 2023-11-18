@@ -13,8 +13,8 @@ const TypedText = () => {
         strings: textsToType,
         autoStart: true,
         loop: true,
-        pauseFor: 1500,
-        deleteSpeed: 30,
+        pauseFor: 2500,
+        deleteSpeed: 40,
       }}
     />
   );

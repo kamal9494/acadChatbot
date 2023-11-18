@@ -2,7 +2,7 @@
     font-size: 2rem;
 }
 .Typewriter__cursor{
-    font-size: 2rem;
+    display: none;
 }
 .Typewriter{
     padding: 0 10%;
