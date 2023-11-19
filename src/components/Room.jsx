@@ -164,7 +164,7 @@ const Banner = () => {
     },
   ];
   return (
-    <>
+    <div className={styles.cont}>
       <div className={styles.bannerContainer}>
         <div className={styles.fixtype}>
           <div className={styles.fixeddiv}>You can ask about</div>
@@ -189,7 +189,7 @@ const Banner = () => {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

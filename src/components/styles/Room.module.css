@@ -25,14 +25,14 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background-color: #efefef;
+    /* background-color: #efefef; */
     /* align-items: center; */
 }
 .botWrap{
     padding: 10px;
     width: 100%;
     overflow: hidden;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +43,7 @@
 .errmsg{
     padding: 8px;
     border-radius: 10px;
-    margin: 5px;
+    margin-left: 30px;
     color: red;
     opacity: .7;
 }
@@ -54,6 +54,12 @@
 .head{
     text-align: center;
     font-size: 30px;
+}
+.cont{
+    background-color: #fff;
+    /* height: 74vh; */
+    height: 100%;
+    overflow-y: hidden;
 }
 .bannerContainer{
     margin-top: 10px;
@@ -141,6 +147,7 @@
 }
 .container{
     width: 70%;
+    background-color: #efefef;
 }
 .abt{
     display: flex;
