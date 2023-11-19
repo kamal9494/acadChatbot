@@ -9,7 +9,8 @@ import { db } from "../config/firebase";
 import { collection, addDoc } from "firebase/firestore";
 
 const Input = (props) => {
-  const [message, setMessage] = useState({ id: v4(), msg: "", from: "_user" });
+  const sample = { id: v4(), msg: "", from: "_user" };
+  const [message, setMessage] = useState(sample);
 
   const sendToBot = async (userInput, allMessages) => {
     const botName = process.env.REACT_APP_BOT_NAME;
@@ -19,6 +20,7 @@ const Input = (props) => {
         id: v4(),
         msg: responce.message,
         from: "_bot",
+        time: new Date(),
       };
       props.setBotStatus(false);
       props.setMessages([...allMessages, botMsg]);
@@ -26,8 +28,9 @@ const Input = (props) => {
       console.log(err);
       const error = {
         id: v4(),
-        errmsg: "Opps! Error Occurred "+err,
+        errmsg: "Opps! Error Occurred " + err,
         from: "_bot",
+        time: new Date(),
       };
       const errorMsg = [...allMessages, error];
       props.setMessages(errorMsg);
@@ -47,6 +50,7 @@ const Input = (props) => {
         id: v4(),
         msg: "Error noted with ID : " + docRef.id,
         from: "_bot",
+        time: new Date(),
       };
       props.setMessages([...errorMsg, error]);
     } catch (e) {
@@ -56,14 +60,18 @@ const Input = (props) => {
 
   const handleSubmit = () => {
     if (message.msg.trim() === "") {
-      toast.warning("Enter your Query"); 
-      setMessage({ id: v4(), msg: "", from: "_user" });
+      toast.warning("Enter your Query");
+      setMessage(sample);
     } else {
-      const allMessages = [...props.messages, message];
+      const msg = {
+        ...message,
+        time: new Date(),
+      };
+      const allMessages = [...props.messages, msg];
       props.setMessages(allMessages);
       props.setBotStatus(true);
       sendToBot(message.msg, allMessages);
-      setMessage({ id: v4(), msg: "", from: "_user" });
+      setMessage(sample);
     }
   };
 

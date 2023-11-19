@@ -19,6 +19,7 @@ const Room = () => {
       block: "center",
       inline: "start",
     });
+    console.log(messages);
   }, [messages]);
 
   return (
@@ -45,6 +46,7 @@ const Room = () => {
                   msg={msg.msg}
                   errmsg={msg.errmsg}
                   from={msg.from}
+                  time={msg.time.toLocaleTimeString()}
                 />
               ))}
               {botStatus ? <Receiving /> : null}
@@ -90,7 +92,7 @@ const Nav = ({ messages, setMessages }) => {
 };
 
 // Messages // user || bot
-const Message = ({ msg, from, errmsg }) => {
+const Message = ({ msg, from, errmsg, time }) => {
   return (
     <div className={from === "_user" ? styles.userWrap : styles.botWrap}>
       <div
@@ -121,6 +123,7 @@ const Message = ({ msg, from, errmsg }) => {
           </div>
         {/* </div> */}
       </div>
+      <div className={styles.timediv}>{time}</div>
     </div>
   );
 };

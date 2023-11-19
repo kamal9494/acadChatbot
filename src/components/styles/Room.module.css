@@ -147,7 +147,7 @@
 }
 .container{
     width: 70%;
-    background-color: #efefef;
+    /* background-color: #efefef; */
 }
 .abt{
     display: flex;
@@ -163,6 +163,11 @@
 }
 .bold{
     font-weight: 500;
+}
+.timediv{
+    display: flex;
+    justify-content: right;
+    font-size: 12px;
 }
 
 
