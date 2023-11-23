@@ -111,11 +111,11 @@ const Input = (props) => {
             onClick={handleSubmit}
             disabled={props.botStatus}
           >
-            <AiOutlineSend size={22} />
+            <AiOutlineSend className={styles.btn} size={22} />
           </button>
         </div>
       </div>
-      <div>
+      <div className={styles.footer}>
         <p className={styles.note}>
           Note : This Bot will answer according to the 2020 curriculum of VIT-AP
           University.

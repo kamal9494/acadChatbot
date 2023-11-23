@@ -1,3 +1,15 @@
+:root {
+    --primary: #edf2fc;
+    --secondary: #212121;
+    --bgColor: #fff;
+}
+
+.dark {
+    --primary: #001514;
+    --secondary: #fff;
+    --bgColor: #212121;
+}
+
 .box{
     padding: 0 10%;
     margin-top: 10px;
@@ -12,7 +24,7 @@
     font-size: 1rem;
 }
 .que{
-    background-color: rgb(230, 230, 230);
+    background-color: var(--bgColor);
     padding: 10px;
     border-radius: 5px;
 }

@@ -7,6 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { AiFillGithub, AiFillRobot, AiOutlineUser } from "react-icons/ai";
 import TypedText from "./TypedText";
 import Sample from "./Sample";
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 
 const Room = () => {
   const [messages, setMessages] = useState([]);
@@ -34,7 +36,7 @@ const Room = () => {
       <div className={styles.containerWrap} data-bs-spy="scroll">
         <div
           className={styles.container}
-          style={{ height: "75vh", overflow: "auto" }}
+          style={{ height: "79vh", overflow: "auto" }}
         >
           {messages.length === 0 ? (
             <Banner />
@@ -67,12 +69,28 @@ const Room = () => {
 
 // Navbar
 const Nav = ({ messages, setMessages }) => {
+  const [isDarkMode,setIsDarkMode] = useState(false);
   const clearChat = () => {
     if (messages.length > 0) {
       setMessages([]);
       toast.success("Chat Cleared");
     } else toast.error("No messages");
   };
+  const setDarkMode = () => {
+    setIsDarkMode(true);
+    document.querySelector("body").setAttribute('data-theme', 'dark');
+  }
+  const setLightMode = () => {
+    setIsDarkMode(false);
+    document.querySelector("body").setAttribute('data-theme', 'light');
+  }
+  const handleTheme = () => {
+    if(isDarkMode){
+      setLightMode();
+    }else{
+      setDarkMode();
+    }
+  }
   return (
     <div className={styles.navContainerWrap}>
       <div className={styles.navContainer}>
@@ -81,6 +99,7 @@ const Nav = ({ messages, setMessages }) => {
           <span className={styles.navTitle}>Academic Bot</span>
         </div>
         <div className={styles.navRight}>
+          {isDarkMode ? <CiLight onClick={handleTheme} className={styles.btn} size={26}/> : <MdDarkMode onClick={handleTheme} className={styles.btn} size={26} />}
           {/* clear all btn */}
           <button type="button" className={styles.clear} onClick={clearChat}>
             Clear Chat

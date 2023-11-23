@@ -1,4 +1,16 @@
-.container{
+:root {
+    --primary: #edf2fc;
+    --secondary: #212121;
+    --bgColor: #fff;
+}
+
+.dark {
+    --primary: #000106;
+    --secondary: #fff;
+    --bgColor: #212121;
+}
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,31 +18,38 @@
     height: 10vh;
     bottom: 0;
     position: sticky;
+    background-color: var(--primary);
 }
 
-.indiv{
+.indiv {
     width: 80%;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.input{
+
+.input {
     margin-right: 10px;
     width: 70%;
     height: 50px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 20px;
+    /* border: 1px solid #ccc; */
+    border: none;
     font-size: 16px;
     padding: 10px;
     overflow: hidden;
+    box-shadow: 0 0 10px rgb(73, 73, 73);
+    background-color: var(--bgColor);
+    color: var(--secondary);
 }
 
-.input:focus{
+.input:focus {
     outline: none;
     box-shadow: 0 0 10px rgb(73, 73, 73);
 }
-.send{
+
+.send {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,29 +61,39 @@
     width: 50px;
     cursor: pointer;
 }
-.send:disabled{
+
+.send:disabled {
     background-color: #c2c2c2;
     cursor: not-allowed;
 }
 
-.note{
+.note {
     text-align: center;
     color: red;
+    font-weight: 400;
     font-size: small;
     padding: 0 15px;
 }
 
+.footer{
+    background-color: var(--primary);
+    width: 100%;
+}
+
+.btn{
+    color: #fff;
+}
 
 
-@media (max-width: 400px){
-    .indiv{
+@media (max-width: 400px) {
+    .indiv {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .input{
+    .input {
         width: 90%;
         border-radius: 10px;
         border: none;
@@ -76,14 +105,14 @@
 }
 
 @media (min-width: 400px) and (max-width: 614px) {
-    .indiv{
+    .indiv {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .input{
+    .input {
         width: 90%;
         border-radius: 10px;
         border: none;
@@ -93,15 +122,16 @@
         overflow: hidden;
     }
 }
+
 @media (min-width: 615px) and (max-width: 900px) {
-    .indiv{
+    .indiv {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .input{
+    .input {
         width: 80%;
         border-radius: 10px;
         border: none;
