@@ -10,6 +10,7 @@ import Sample from "./Sample";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 
+
 const Room = () => {
   const [messages, setMessages] = useState([]);
   const [botStatus, setBotStatus] = useState(false);
@@ -21,7 +22,6 @@ const Room = () => {
       block: "center",
       inline: "start",
     });
-    console.log(messages);
   }, [messages]);
 
   return (
@@ -70,6 +70,18 @@ const Room = () => {
 // Navbar
 const Nav = ({ messages, setMessages }) => {
   const [isDarkMode,setIsDarkMode] = useState(false);
+  
+  useEffect(() => {
+    const theme = localStorage.getItem("isDarkMode");
+    console.log(theme === "1");
+    setIsDarkMode(theme === "1");
+    if (theme === "1") {
+      document.querySelector("body").setAttribute('data-theme', 'dark');
+    } else {
+      document.querySelector("body").setAttribute('data-theme', 'light');
+    }
+  }, [])
+  
   const clearChat = () => {
     if (messages.length > 0) {
       setMessages([]);
@@ -78,10 +90,12 @@ const Nav = ({ messages, setMessages }) => {
   };
   const setDarkMode = () => {
     setIsDarkMode(true);
+    localStorage.setItem("isDarkMode", "1");
     document.querySelector("body").setAttribute('data-theme', 'dark');
   }
   const setLightMode = () => {
     setIsDarkMode(false);
+    localStorage.setItem("isDarkMode", "0");
     document.querySelector("body").setAttribute('data-theme', 'light');
   }
   const handleTheme = () => {
