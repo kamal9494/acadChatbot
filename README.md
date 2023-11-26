@@ -12,6 +12,6 @@ Deployed at https://academicbot.netlify.app/
 
 # Preview
 ![image](https://github.com/kamal9494/acadChatbot/assets/97849725/08781f73-e0d3-45d7-b996-5e1c7a8945b9)
-Latest Image
+# Latest Image
 ![image](https://github.com/kamal9494/acadChatbot/assets/97849725/06eed50b-7ba7-492a-b154-822a39a34fdc)
 
