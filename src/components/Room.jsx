@@ -10,7 +10,6 @@ import Sample from "./Sample";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
 
-
 const Room = () => {
   const [messages, setMessages] = useState([]);
   const [botStatus, setBotStatus] = useState(false);
@@ -69,19 +68,19 @@ const Room = () => {
 
 // Navbar
 const Nav = ({ messages, setMessages }) => {
-  const [isDarkMode,setIsDarkMode] = useState(false);
-  
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   useEffect(() => {
     const theme = localStorage.getItem("isDarkMode");
     console.log(theme === "1");
     setIsDarkMode(theme === "1");
     if (theme === "1") {
-      document.querySelector("body").setAttribute('data-theme', 'dark');
+      document.querySelector("body").setAttribute("data-theme", "dark");
     } else {
-      document.querySelector("body").setAttribute('data-theme', 'light');
+      document.querySelector("body").setAttribute("data-theme", "light");
     }
-  }, [])
-  
+  }, []);
+
   const clearChat = () => {
     if (messages.length > 0) {
       setMessages([]);
@@ -91,20 +90,20 @@ const Nav = ({ messages, setMessages }) => {
   const setDarkMode = () => {
     setIsDarkMode(true);
     localStorage.setItem("isDarkMode", "1");
-    document.querySelector("body").setAttribute('data-theme', 'dark');
-  }
+    document.querySelector("body").setAttribute("data-theme", "dark");
+  };
   const setLightMode = () => {
     setIsDarkMode(false);
     localStorage.setItem("isDarkMode", "0");
-    document.querySelector("body").setAttribute('data-theme', 'light');
-  }
+    document.querySelector("body").setAttribute("data-theme", "light");
+  };
   const handleTheme = () => {
-    if(isDarkMode){
+    if (isDarkMode) {
       setLightMode();
-    }else{
+    } else {
       setDarkMode();
     }
-  }
+  };
   return (
     <div className={styles.navContainerWrap}>
       <div className={styles.navContainer}>
@@ -113,8 +112,23 @@ const Nav = ({ messages, setMessages }) => {
           <span className={styles.navTitle}>Academic Bot</span>
         </div>
         <div className={styles.navRight}>
-          {isDarkMode ? <CiLight onClick={handleTheme} className={styles.btn} size={26}/> : <MdDarkMode onClick={handleTheme} className={styles.btn} size={26} />}
-          {/* clear all btn */}
+          <a
+          className={styles.github}
+            rel="noreferrer"
+            href="https://github.com/kamal9494/acadChatbot"
+            target="_blank"
+          >
+            <AiFillGithub className={styles.btn} size={26} />
+          </a>
+          {isDarkMode ? (
+            <CiLight onClick={handleTheme} className={styles.btn} size={26} />
+          ) : (
+            <MdDarkMode
+              onClick={handleTheme}
+              className={styles.btn}
+              size={26}
+            />
+          )}
           <button type="button" className={styles.clear} onClick={clearChat}>
             Clear Chat
           </button>
@@ -151,9 +165,9 @@ const Message = ({ msg, from, errmsg, time }) => {
       </div>
       <div style={{ maxWidth: "100%" }}>
         {/* <div> */}
-          <div className={errmsg ? styles.errmsg : styles.msg}>
-            {errmsg ? errmsg : msg}
-          </div>
+        <div className={errmsg ? styles.errmsg : styles.msg}>
+          {errmsg ? errmsg : msg}
+        </div>
         {/* </div> */}
       </div>
       <div className={styles.timediv}>{time}</div>
@@ -209,21 +223,15 @@ const Banner = () => {
       </div>
       <h2 className={styles.head}>Examples</h2>
       <div className={styles.samples}>
-        {questions.map((question,index) => {
-          return <Sample key={index} title={question.title} sample={question.sample} />;
+        {questions.map((question, index) => {
+          return (
+            <Sample
+              key={index}
+              title={question.title}
+              sample={question.sample}
+            />
+          );
         })}
-      </div>
-      <div className={styles.doneby}>
-        <div className={styles.abt}>
-          Done by &nbsp; <AiFillGithub size={25} />
-          <a
-            rel="noreferrer"
-            href="https://github.com/kamal9494/acadChatbot"
-            target="_blank"
-          >
-            kamal9494
-          </a>
-        </div>
       </div>
     </div>
   );
