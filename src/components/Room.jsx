@@ -113,7 +113,7 @@ const Nav = ({ messages, setMessages }) => {
         </div>
         <div className={styles.navRight}>
           <a
-          className={styles.github}
+            className={styles.github}
             rel="noreferrer"
             href="https://github.com/kamal9494/acadChatbot"
             target="_blank"
@@ -221,17 +221,19 @@ const Banner = () => {
           <div className={styles.qna}>{<TypedText />}</div>
         </div>
       </div>
-      <h2 className={styles.head}>Examples</h2>
-      <div className={styles.samples}>
-        {questions.map((question, index) => {
-          return (
-            <Sample
-              key={index}
-              title={question.title}
-              sample={question.sample}
-            />
-          );
-        })}
+      <div className={styles.examples}>
+        <h2 className={styles.head}>Examples</h2>
+        <div className={styles.samples}>
+          {questions.map((question, index) => {
+            return (
+              <Sample
+                key={index}
+                title={question.title}
+                sample={question.sample}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );

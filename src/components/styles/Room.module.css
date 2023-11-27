@@ -75,8 +75,9 @@
 }
 
 .fixtype {
-    height: 100px;
     margin-bottom: 15px;
+    height: 100px;
+    width: 100%;
 }
 
 .head {
@@ -85,22 +86,28 @@
 }
 
 .cont {
-    /* height: vh; */
+    height: 100%;
     background-color: var(--primary);
     overflow-y: hidden;
     color: var(--textColor);
 }
 
 .bannerContainer {
-    margin-top: 10px;
-    margin-bottom: 50px;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bannerContainer p {
     margin-top: 5px;
-    /* color: rgb(108, 108, 108); */
 }
-
+.examples{
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .fixeddiv {
     text-align: center;
     font-size: 2.5rem;
