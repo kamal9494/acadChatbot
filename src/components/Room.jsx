@@ -35,7 +35,7 @@ const Room = () => {
       <div className={styles.containerWrap} data-bs-spy="scroll">
         <div
           className={styles.container}
-          style={{ height: "79vh", overflow: "auto" }}
+          style={{ height: "100%" }}
         >
           {messages.length === 0 ? (
             <Banner />
