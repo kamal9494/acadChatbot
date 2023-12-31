@@ -1,15 +1,3 @@
-:root {
-    --primary: #edf2fc;
-    --secondary: #212121;
-    --bgColor: #fff;
-}
-
-.dark {
-    --primary: #001514;
-    --secondary: #fff;
-    --bgColor: #212121;
-}
-
 .box{
     padding: 0 10%;
     margin-top: 10px;

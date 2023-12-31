@@ -1,15 +1,3 @@
-:root {
-    --primary: #edf2fc;
-    --secondary: #212121;
-    --bgColor: #fff;
-}
-
-.dark {
-    --primary: #000106;
-    --secondary: #fff;
-    --bgColor: #212121;
-}
-
 .container {
     display: flex;
     flex-direction: column;

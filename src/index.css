@@ -1,6 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
 
+:root {
+    --primary: #edf2fc;
+    --secondary: #212121;
+    --textColor: black;
+    --bgColor: #fff;
+    --navColor: #d6edff;
+}
+
+[data-theme="dark"] {
+    --primary: #242331;
+    --secondary: #fff;
+    --textColor: #fff;
+    --bgColor: #212121;
+    --navColor: #242331;
+}
+
 * {
     margin: 0;
     padding: 0;
