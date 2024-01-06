@@ -24,15 +24,15 @@ const Room = () => {
   }, [messages]);
 
   return (
-    <div>
+    <div className={styles.screen}>
       <Nav messages={messages} setMessages={setMessages} />
       <ToastContainer
-        autoClose={2000}
+        autoClose={1000}
         hideProgressBar={true}
         theme="dark"
         position="top-center"
       />
-      <div className={styles.containerWrap} data-bs-spy="scroll">
+      <div className={styles.containerWrap}>
         <div
           className={styles.container}
           style={{ height: "100%" }}
@@ -144,7 +144,6 @@ const Message = ({ msg, from, errmsg, time }) => {
     <div className={from === "_user" ? styles.userWrap : styles.botWrap}>
       <div
         style={{
-          // width: "50px",
           padding: "2px",
           display: "flex",
           justifyContent: "flex-end",
@@ -155,11 +154,13 @@ const Message = ({ msg, from, errmsg, time }) => {
           <div className={styles.usertag}>
             <AiOutlineUser size={25} />
             <p className={styles.bold}>You</p>
+            <span className={styles.timediv}>{time}</span>
           </div>
         ) : (
           <div className={styles.usertag}>
             <AiFillRobot size={26} />
             <p className={styles.bold}>Bot</p>
+            <span className={styles.timediv}>{time}</span>
           </div>
         )}
       </div>
@@ -170,7 +171,6 @@ const Message = ({ msg, from, errmsg, time }) => {
         </div>
         {/* </div> */}
       </div>
-      <div className={styles.timediv}>{time}</div>
     </div>
   );
 };
@@ -215,12 +215,12 @@ const Banner = () => {
   ];
   return (
     <div className={styles.cont}>
-      <div className={styles.bannerContainer}>
+      {/* <div className={styles.bannerContainer}> */}
         <div className={styles.fixtype}>
           <div className={styles.fixeddiv}>You can ask about</div>
           <div className={styles.qna}>{<TypedText />}</div>
         </div>
-      </div>
+      {/* </div> */}
       <div className={styles.examples}>
         <h2 className={styles.head}>Examples</h2>
         <div className={styles.samples}>

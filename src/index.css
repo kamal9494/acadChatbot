@@ -7,6 +7,7 @@
     --textColor: black;
     --bgColor: #fff;
     --navColor: #d6edff;
+    --msgbg: #fff;
 }
 
 [data-theme="dark"] {
@@ -15,6 +16,7 @@
     --textColor: #fff;
     --bgColor: #212121;
     --navColor: #242331;
+    --msgbg: #1c1c1c;
 }
 
 * {

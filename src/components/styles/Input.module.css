@@ -1,17 +1,19 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 11vh;
+    height: auto;
+    width: 100%;
     bottom: 0;
-    position: sticky;
+    left: 0;
+    position: fixed;
     background-color: var(--primary);
 }
 
 .indiv {
     width: 80%;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +46,7 @@
     border: none;
     background-color: darkslateblue;
     height: 50px;
-    border-radius: 20%;
+    border-radius: 25px;
     color: #fff;
     width: 50px;
     cursor: pointer;
@@ -83,7 +85,6 @@
 
     .input {
         width: 90%;
-        border-radius: 10px;
         border: none;
         font-size: 15px;
         padding: 12px;
@@ -102,7 +103,6 @@
 
     .input {
         width: 90%;
-        border-radius: 10px;
         border: none;
         font-size: 18px;
         padding: 12px;
@@ -121,7 +121,6 @@
 
     .input {
         width: 80%;
-        border-radius: 10px;
         border: none;
         font-size: 16px;
         padding: 12px;
