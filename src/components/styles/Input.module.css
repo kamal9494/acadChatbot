@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    z-index: 2;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
