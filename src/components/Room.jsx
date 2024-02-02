@@ -35,7 +35,6 @@ const Room = () => {
       <div className={styles.containerWrap}>
         <div
           className={styles.container}
-          style={{ height: "100%" }}
         >
           {messages.length === 0 ? (
             <Banner />
@@ -165,11 +164,9 @@ const Message = ({ msg, from, errmsg, time }) => {
         )}
       </div>
       <div style={{ maxWidth: "100%" }}>
-        {/* <div> */}
         <div className={errmsg ? styles.errmsg : styles.msg}>
           {errmsg ? errmsg : msg}
         </div>
-        {/* </div> */}
       </div>
     </div>
   );
@@ -215,12 +212,10 @@ const Banner = () => {
   ];
   return (
     <div className={styles.cont}>
-      {/* <div className={styles.bannerContainer}> */}
         <div className={styles.fixtype}>
           <div className={styles.fixeddiv}>You can ask about</div>
           <div className={styles.qna}>{<TypedText />}</div>
         </div>
-      {/* </div> */}
       <div className={styles.examples}>
         <h2 className={styles.head}>Examples</h2>
         <div className={styles.samples}>
