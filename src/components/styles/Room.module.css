@@ -5,9 +5,11 @@
 
 .containerWrap {
     width: 100%;
+    height: calc(90vh - 20vh);
+    overflow-y: auto;
     position: relative;
     padding-bottom: 10vh;
-    min-height: calc(100vh - 10vh);
+    min-height: calc(100vh - 20vh);
     display: flex;
     z-index: 1;
     justify-content: center;
@@ -180,14 +182,13 @@
 
 .note {
     color: red;
-    /* font-weight: 400; */
     opacity: .7;
     font-size: 1rem;
 }
 
 .container {
     width: 70%;
-    height: 80vh;
+    height: calc(90vh - 20vh);
     background-color: var(--primary);
 }
 
